@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KP uppgift 1</title>
+    <script src="../libraries/p5.min.js" type="text/javascript"></script>
+
+    <!--
+    Ett alternativ till ovanstående inkludering av bibliotek är detta:
+
+    https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js
+
+    Länkar till cnd:er hittar ni här: https://cdnjs.com/libraries/p5.js/
+    Detta alternativ kräver dock att ni arbetar online.
+    -->
+
+    
+    <script src="../libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="../libraries/p5.sound.js" type="text/javascript"></script>
+
+
+    <!-- Här inkluderas själva p5.js-sketchen -->
+    <script src="sketch_uppgift_1.js"></script>
+
+  <!-- lite CSS -->
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+
+    body{
+      padding: 0;
+      margin: 0;
+      background-color: #FFD530;
+      font-family: helvetica, arial, verdana, sans-serif;
+      font-size: .8em;
+    }
+
+    #sketch-holder{
+      width: 500px;
+      height: 500px;
+      margin: 1em auto 0 auto;
+      border: 1px solid #ccc;
+    }
+    #instruktioner{
+      margin: 1em auto 0 auto;
+      padding:1em;
+      width: 500px;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+  </style>
+  </head>
+  <body>
+
+    <!-- Detta är div:en som refereras till som 'parent' i sketchfilen, här kommer sketchen att visas -->
+    <div id="sketch-holder"></div>
+
+
+
+    <div id="instruktioner">
+      <!--
+      Instruktioner (steg 1-4 är 'övnings-steg' och steg 5 är själva uppgiften):
+
+      Steg 1 - Rita upp Södertörns högskolas logotyp (de gula ringarna), med hjälp av ellipser. använd metoderna ellipse(), fill(), noFill(), stroke(), noStroke()
+
+      Steg 2 - Gör så att logotypen följer muspekaren. Använd variablerna mouseX och mouseY för att po
+      sitionera.
+
+      Steg 3 - Animera nu isället logotypen så att den rör sig på egen hand eller ändrar storlek. Använd variabler som ökar eller minskar värden för storlek och position.
+
+      Steg 4 - Vänd håll på animationen så att den inte åker eller växer utanför skärmen. Använd if() {} else {} för att hålla koll på när värdena blir för stora eller för små.
+
+      Steg 5 - Bygg vidare och skapa ett *intressant uttryck* baserat på en animering av logotypen. Detta är uppgiften som lämnas in. Ni har här fria händer att omtolka loggan, lägga till andra grafiska eller typografiska element, m.m. Upgiften bedöms både baserat på visad förståelse i kommentarerna i koden, samt på kvaliteten hos det färdiga uttrycket (t.ex. komplexitet, gestaltning, originalitet).
+
+      OBS! Kom ihåg att varje rad kod (som ni skriver själva) ska kommenteras!
+      -->
+
+      <h3>DIK, Kreativ programmering HT22 - Uppgift 1</h3>
+      <p>Namn: <name id="namn">Benjamin Nymark och Linnea Karlström</name></p>
+      <p id="reflektioner">
+      <!--
+      Här ska ni reflektera över uppgiften och även besvara några konkreta frågor:
+      * Förklara vad som är intressant med ert uttryck. Hur knyter det t.ex. an till andra uttryck från konst, film eller spel? Har ni inspirerats av något? Kan ni hitta ord eller begrepp som är lämpliga för att beskriva ert uttryck?
+
+      * Reflektera kort över processen med uppgiften. Om ni körde fast, hur kom ni vidare? Har ni tittat i huvudsak på exempel, videotutorials, eller i boken? Vad hade ni problem med? Vad ägnade ni den mesta tiden åt?
+
+      * Redogör kort för kommentarer ni fick från designkritiken - vilka ändringar har ni gjort, baserat på kritiken?
+      -->
+      <p>Det som är intressant med vårt uttryck är att det rör på sig som en slängkunga och beroende på hur man rör musen ändras hastigheten. Vi ville skapa ett levande uttryck där användaren skulle bli överraskad då det till en början inte ser ut som något speciellt, men vid rörande av mus så börjar cirkeln snurra. För att beskriva vårt uttryck skulle vi säga "den kontrollerade "Slänggungan" eller "Bergodal-bana". Vad som var svårt i början va att komma på vad man skulle göra och bestämma sig för det. Vi hade lite olika idéer men kom sedan fram till att göra denna efter att ha fått inspiration från en sida. 
+      Efter försök att lösa en tidigare projektidé beslutades att göra något annat och de visade sig vara en bra idé då det gick bättre. Vad som strulade var att få en del av den tidigare koden att fungera ihop med den nya och sedan förstå hur det hänger ihop. Då var tanken att göra en form av animation men denna har mera funktionalitet i sig så är nöjd över att göra detta istället. Den mesta tiden gick åt att komma på något att göra och även en del tid åt felsökning.   
+      </p>
+    </div>
+  </body>
+</html>

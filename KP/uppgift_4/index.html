@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="../libraries/p5.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"></script> -->
+
+    <!--
+    Här kan ni antingen använda den lokala p5.play.js som finns i underkatalogen "p5play"
+    eller cdn-versionen som finns på url:en nedan
+      -->
+    <!-- <script src="https://p5play.org/v2/p5.play.js"></script> -->
+
+    <!-- lokal p5.play.js -->
+    <script src="p5play/p5.play.js"></script>
+
+    <!-- Själva skissen -->
+    <script src="sketch_uppgift_4.js"></script>
+
+    <!-- js-dokument som innehåller kod för Player-klassen -->
+    <script src="player.js"></script>
+
+    <!-- js-dokument som innehåller kod för Scoreboard-klassen -->
+    <script src="scoreboard.js"></script>
+
+    <meta charset="utf-8" />
+<style>
+*{
+  box-sizing: border-box;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #FFD530;
+  font-family: helvetica, arial, verdana, sans-serif;
+  font-size: .8em;
+}
+
+#sketch-holder{
+  /*
+  notera att värden för bredd och höjd här korresponderar med det
+  som anges i sketchen: createCanvas(bredd, höjd)
+  */
+  width: 800px;
+  height: 400px;
+  margin: 1em auto 0 auto;
+  border: 1px solid #ccc;
+}
+#instruktioner{
+  transform: skewY(0deg);
+  transform: rotate(0deg);
+  margin: 1em auto 0 auto;
+  padding:1em;
+  width: 800px;
+  height: auto;
+  border: 1px solid #ccc;
+  opacity: 0.7;
+  color: #000;
+}
+</style>
+  </head>
+  <body>
+    <div id="sketch-holder"></div>
+
+    <div id="instruktioner">
+      <!--
+      Uppgift 4 - Skapa ett objektorienterat spel. I uppgiften ska ni jobba med klasser, objekt och instanser och med ett externt bibliotek (p5.play)
+
+      Steg 1 - Läs igenom läsanvisningarna. Ta er tid att läsa i boken, titta på videos och gå igenom tutorials.
+      Försäkra er om att ni förstår skillnaden mellan INSTANS och KLASS. Läs också koden i det här exemplet NOGA och försök förstå varje rad. Titta igenom koden i filerna 'player.js' och 'scoreboard.js'
+
+      Titta på p5.play-biblioteket: https://p5play.org/v2/docs. Här finns referens.
+
+      Steg 2-10 är övningar för att få känna på hur exemplet är uppbyggt, steg 11 är sjäva uppgiften.
+
+      Steg 2 - Skapa ytterligare en INSTANS av klassen Player och lägg till i världen/spelet (ni ska alltså inte skapa ytterligare en klass, utan en ny instans).
+
+      Steg 3 - Gör så att den nya instansen styrs av tangentbordstryckningar med andra tangenter (än de som redan används).
+
+      Steg 4 - Alla instanser av klassen Player får default 100 i score och 4 liv. Ändra så att score-tilldelningen istället är 50 och antalet liv är 3.
+
+      Steg 5 - (Strunta i det här steget, jag har ändrat lite i koden så detta funkar inte längre...) Lägg till en 'label' för en eller flera instanser av Player-klassen. Ändra så att denna label visas och att antal liv och instansens namn syns i denna label.
+
+      Steg 6 - Ändra så att när en Player 'bränns i lavan' så ska dess score minska i steg av 10 poäng (istället för i steg av 1).
+
+      Steg 7 - Skapa en ny klass som heter 'Enemy'. Börja med att skapa en ny fil och döp den till enemy.js. Utgå från (kopiera) kod från klassen Player och ändra namnet på klassen. Kom ihåg att också inkludera den här nya filen i din index.html-fil.
+
+      Steg 8 - Ändra i konstruktorn så att Enemy tar emot andra parametrar än Player. T.ex. genom att ha randomiserade x- y-startvärden eller egenskapen 'evilness' (t.ex. en numerisk skala som kan användas för att orsaka olika grader av skada om en Player krockar med en Enemy), eller något annat som du finner användbart.
+
+      Steg 8 - I huvudprogrammet; lägg till några instanser av den nya Enemy-klassen och ge dessa animation och en egen grupp. Prova t.ex. att skapa många i toppen av skärmen och låt dessa 'ramla ner' från ovan.
+
+      Steg 9 - I draw-metoden, kolla om Player-objekten krockar med ett enemy-objekt. Ta i så fall bort enemy-objektet med hjälp av remove(). Gör också så att score för Player-instansen minskar vid krock med Enemy (titta i befintlig kod och i referensen).
+
+      Steg 10 - Lägg till ljud. Gör så att olika händelser (krockar, hopp, skador etc.) kopplas till något ljud som passar spelet. Kom ihåg att inkludera p5.sound.js i indexfilen!
+
+      Steg 11 - Gör ett spel med fungerande spelmekanik. Utveckla och gör om klasserna i exemplet. Gör fler om det behövs. Experimentera med p5.play, prova t.ex. att ändra gravitationen och 'farten' i JUMP och MOVE. Skapa bilder till animationer, prova att styra objekt med muspekare istället etc. osv. Titta på exemplen och experimentera med den kod som finns där.
+
+
+      Upgiften bedöms både baserat på visad förståelse i kommentarerna i koden samt på kvaliteten hos det färdiga uttrycket (t.ex. komplexitet, gestaltning, originalitet)
+
+      OBS! Varje rad eller block av sammanhängande kod ska kommenteras!
+
+    -->
+
+      <h3>DIK, Kreativ programmering HT22 - Uppgift 4</h3>
+      <p>Namn: <name id="namn">Sal Paradise och Dean Moriarty</name></p>
+      <p style="color: #000;">Använd piltangenter för att styra spelare 1 och "a-w-d" för spelare 2</p>
+      <p><a href="https://p5play.org/v2/docs" target="_blank">p5.play: Referens (Tänk på att vi här använder version 2 - inte version 3!)
+
+    </p>
+      <p id="reflektioner">
+        <!--
+        Här nedan ska ni reflektera över uppgiften och även besvara några konkreta frågor
+
+        * Förklara vad som är intressant med ert uttryck. Hur knyter det t.ex. an till andra uttryck från konst, film eller spel? Har ni inspirerats av något? Kan ni hitta ord eller begrepp som är lämpliga för att beskriva ert uttryck?
+
+        * Reflektera kort över processen med uppgiften. Om ni körde fast, hur kom ni vidare? Har ni tittat i huvudsak på exempel, videotutorials, eller i boken? Vad hade ni problem med? Vad ägnade ni den mesta tiden åt?
+
+        * Reflektera kort över kommentarer ni fick från designkritiken - har ni gjort några ändringar baserat på kritiken?
+        -->
+
+        <!-- Börja reflektionerna här -->
+
+
+        <!-- Slut på reflektioner -->
+      </p>
+    </div>
+
+  </body>
+</html>

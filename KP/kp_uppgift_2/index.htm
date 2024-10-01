@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+    <title>KP uppgift 2</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <!--
+    Ett alternativ till ovanstående inkludering av bibliotek är detta:
+
+    https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js
+
+    Länkar till cnd:er hittar ni här: https://cdnjs.com/libraries/p5.js/
+    Detta alternativ kräver att ni arbetar online.
+    -->
+
+    <!-- Här inkluderas själva p5.js-sketchen -->
+   <script src="triangle.js"></script>
+  <script src="sketch.js"></script>
+
+    <!-- Låt detta script vara kvar, det är här för att jag ska kunna visa/dölja era reflektioner -->
+    <script>
+		let ref = true;
+		function togglaReflektioner(){
+			if(ref){
+				document.getElementById('reflektioner').style.display = 'none';
+			}
+			else{
+				document.getElementById('reflektioner').style.display = 'block';
+			}
+			ref = !ref;
+		}
+    </script>
+
+    <!-- lite CSS -->
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+
+      body{
+        padding: 0;
+        margin: 0;
+        background-color: #FFD530;
+        font-family: helvetica, arial, verdana, sans-serif;
+        font-size: .8em;
+      }
+
+      #instruktioner{
+        margin: 1em auto 0 auto;
+        padding:1em;
+        width: 576px;
+        height: auto;
+        border: 1px solid #ccc;
+      }
+
+      #reflektioner{
+		display: none;
+		}
+
+    </style>
+  </head>
+  <body>
+    <!-- Detta är div:en som refereras till som 'parent' i sketchfilen, här kommer sketchen att visas -->
+    <div id="sketch-holder"></div>
+
+    <div id="instruktioner">
+      <!--
+      Instruktioner, uppgift 2 - Skapa ett interaktivt konstverk - "the art of repetition".
+
+      I denna uppgift ska ni skapa ett grafiskt uttryck genom att rita upp och repetera grafiska former. Uttrycket ska också vara interaktivt, och förändras baserat på t.ex. mus- eller tangentklick eller rörelser med muspekaren. Uppgiften ska även innehålla funktioner/metoder som ni gjort själva och som ni använder i koden.
+
+      (Steg 1-5 är övningar som ni ska göra som stöd för att lösa uppgiften, steg 6 är själva uppgiften. Tanken är alltså att ni kan använda exempelkoden som utgångspunkt och försöka bygga/kombinera/testa kod för att skapa en egen lösning).
+
+      Steg 1 - Prova att rita upp olika grafiska element som cirklar, rektanglar, linjer m.m.
+
+      Steg 2 - Kombinera några olika element (cirklar, rektanglar, m.m.) så att funktionen ritaEnGrej(), ritar upp ett sammansatt objekt på den plats på skärmen som anges av variablerna xpos, och ypos.
+
+      Steg 3 - Gör en "for-loop" som ritar upp en vågrät rad med objekt från ena kanten på skärmen till den andra.
+
+      Steg 4 - Gör en dubbel (nästlad) loop genom att lägga ovanstående loop innuti en ny loop som också ritar upp rader av objekt lodrätt - uppifrån fönstrets topp till dess botten. Hela fönstret ska med andra ord fyllas av objekt.
+
+      Steg 5 - Gör en ny metod ritaOchVrid(xpos, ypos, rotate), som ritar upp och roterar objektet, mha funktionen rotate(). Obs - detta kan vara svårare än vad det verkar... Läs i boken, titta på exempel om rotation. Använd även funktionen translate().
+
+      Steg 6 - Skapa ett uttryck baserat på repetition. Rita upp enkla former som repeteras och varieras på intressanta sätt. Uttrycket skall vara interaktivt, och förändras baserat på t.ex. musklick, rörelser med muspekaren eller tangetbordsklick.
+
+      Ni har användning för- men måste inte utgå från - ovanstående steg (1-5). Det är steg 6 som är uppgiften som lämnas in.
+
+      Tips - använd funktionerna random() eller noise() för att variera uttrycket och göra det mer intressant. Läs om funktionerna här: https://p5js.org/reference/
+
+      Uppgiften bedöms både baserat på visad förståelse i kommentarerna i koden, samt på kvaliteten hos det färdiga uttrycket (t.ex. komplexitet, gestaltning, originalitet).
+
+      Glöm inte att kommentera koden!
+      -->
+
+      <h3>DIK, Kreativ programmering HT22 - Uppgift 2</h3>
+      <p>Namn: <name id="namn">Benjamin Nymark </name></p>
+      <p id="reflektioner">
+      <!--
+      Här nedan ska ni reflektera över uppgiften och även besvara några konkreta frågor
+
+      * Förklara vad som är intressant med ert uttryck. Hur knyter det t.ex. an till andra uttryck från konst, film eller spel? Har ni inspirerats av något? Kan ni hitta ord eller begrepp som är lämpliga för att beskriva ert uttryck?
+
+      * Reflektera kort över processen med uppgiften. Om ni körde fast, hur kom ni vidare? Har ni tittat i huvudsak på exempel, videotutorials, eller i boken? Vad hade ni problem med? Vad ägnade ni den mesta tiden åt?
+
+      * Reflektera kort över kommentarer ni fick från designkritiken - har ni gjort några ändringar baserat på kritiken?
+      -->
+      <!-- Börja reflektionerna här -->
+
+      Det intressanta med mitt uttryck är att man kan göra väldigt många olika former och saker. Det påminner lite om exempelvis en skärmsläckare. Den är stilren men ändå snygg. Jag inspirerades av en Youtube video och tyckte det såg snyggt ut. Jag skulle säga att utrycket känns intressant och speciellt. 
+      Under arbetets gång körde jag fast när jag skulle få utrycket att visas även om jag hade det som behövdes, men sen märkte jag att det fanns en fil jag inte hade med och när jag hade lagt in allt visades bilden. Jag utgick mest ifrån koden från tutorialen. Det som tog mest tid var att felsöka och att testa med olika bilder som skulle kunna passa. 
+
+      <!-- Slut på reflektioner -->
+      </p>
+    </div>
+  </body>
+</html>
