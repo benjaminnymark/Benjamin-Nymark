@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Översättare</title>
+</head>
+<body>
+
+<!--Rubrik-->
+
+<h1>Översättare</h1>
+
+<p>Här kan du välja bland 10 ord att översätta till fem olika språk</p>
+
+<p>Svenska ord som går att översätta är:</p>
+ <p>katt, hund, dator, fisk, studera, mobil, skola, lektion, redovisning, uppgift</p>
+
+<!--koppling till phpfil-->
+<form action="resultat.php" method="POST">
+	<!--Skriv in ordet i inmatningsfält-->
+	<label>Skriv in ditt ord här:</label><br>    
+	<input type="text" name="ord" required>
+
+<!--Välj bland språkalternativ i drop-down-->
+	<br><br>
+	<label for="sprak">Välj språk:</label><br>
+	<select name="sprak" id="sprak" required>
+
+		<option disabled selected value>Välj språk</option>
+		<option value="engelska">Engelska</option>  
+		<option value="franska">Franska</option>
+		<option value="spanska">Spanska</option>
+		<option value="italienska">Italienska</option>
+		<option value="portugisiska">Portugisiska</option>
+
+	</select>
+	<br><br>
+<!--Översätt knapp-->
+
+<input type="submit" name="skicka" value="översätt"> 
+
+<!--Återställa värden-->
+<input type="reset" value="Återställ">
+
+</form>
+</body>
+</html>
